@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
-    Button mbutton1;
+    Button mbutton1, mbutton2;
     TextView mTextview1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,12 +17,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         mbutton1 = findViewById(R.id.button1);
         mTextview1 = findViewById(R.id.textView1);
+        mbutton2 = findViewById(R.id.button2);
 
         mbutton1.setOnClickListener(this);
+        mbutton2.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-        mTextview1.setText("you clicked button1");
+        switch (v.getId()) {
+            case R.id.button1 :mTextview1.setText("you clicked button 1"); break;
+            case R.id.button2 :mTextview1.setText("you clicked button 2"); break;
+            default:break;
+        }
+
     }
 }
